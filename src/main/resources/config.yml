@@ -1,18 +1,18 @@
 damage:
    wolf:
-      - block_explostion
-      - contact
-      - dragon_breath
-      - drowning
-      - entity
-      - entity_explosion
-      - entity_sweep_attack
-      - fire
-      - fall
-      - falling_block
-      - lava
-      - hot_floor
-      #- projectile now disabled
+      - BLOCK_EXPLOSION
+      - CONTACT
+      - DRAGON_BREATH
+      - DROWNING
+      - ENTITY
+      - ENTITY_EXPLOSION
+      - ENTITY_SWEEP_ATTACK
+      - FIRE
+      - FALL
+      - FALLING_BLOCK
+      - LAVA
+      - HOT_FLOOR
+      - PROJECTILE
 
 color:
   BLACK: "&0"
