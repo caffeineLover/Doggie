@@ -33,36 +33,25 @@ public class DoggiePlugin extends JavaPlugin
         getServer().getPluginManager().registerEvents(new EntityDamageEventListener(), this);
 
 
-        if( ! config.getBoolean("damage.drowing") )
+        if( ! config.getBoolean("wolf.damage.drowing") )
             EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.DROWNING);
 
-        if( ! config.getBoolean("damage.entity") )
+        if( ! config.getBoolean("wolf.damage.entity") )
             EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.ENTITY_ATTACK);
 
-        if( ! config.getBoolean("damage.fire") )
+        if( ! config.getBoolean("wolf.damage.fire") )
         {
-            System.out.println("no fire damage");
             EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.FIRE);
             EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.FIRE_TICK);
         }
 
-        if( ! config.getBoolean("damage.fall") )
-        {
-            System.out.println("no falling damage");
+        if( ! config.getBoolean("wolf.damage.fall") )
             EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.FALL);
-        }
 
-        if( ! config.getBoolean("damage.falling_block"))
-        {
-            System.out.println("no falling block damage");
+        if( ! config.getBoolean("wolf.damage.falling_block"))
             EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.FALLING_BLOCK);
-        }
 
-        if( ! config.getBoolean("damage.projectile") )
-        {
-            System.out.println("no projectile damage");
+        if( ! config.getBoolean("wolf.damage.projectile") )
             EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.PROJECTILE);
-        } else
-        System.out.println("PROJECTILE DAMAGE IS TRUE");
     }
 }
