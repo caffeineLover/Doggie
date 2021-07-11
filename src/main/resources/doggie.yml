@@ -1,0 +1,7 @@
+damage:
+   drowning:      false
+   entity:        false
+   fire:          false
+   fall:          false
+   falling_block: false
+   projectile:    true

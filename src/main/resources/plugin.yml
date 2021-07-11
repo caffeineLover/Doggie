@@ -1,0 +1,8 @@
+name: doggie
+main: com.peter.doggie.DoggiePlugin
+version: 1.0
+api-version: 1.17
+description: A bunch of improvements for tamed wolves.
+authors:
+  - Peter
+commands:
