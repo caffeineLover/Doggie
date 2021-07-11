@@ -1,8 +1,15 @@
 damage:
    wolf:
-      drowning:      false
-      entity:        false
-      fire:          false
-      fall:          false
-      falling_block: false
-      projectile:    true
+      block_explosion:     false
+      contact:             true
+      dragon_breath:       false
+      drowning:            false
+      entity:              false
+      entity_explosion:    false
+      entity_sweep_attack: false
+      fire:                false
+      fall:                false
+      falling_block:       false
+      lava:                false
+      hot_floor:           true
+      projectile:          true

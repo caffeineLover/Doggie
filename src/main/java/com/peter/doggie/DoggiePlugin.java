@@ -32,12 +32,26 @@ public class DoggiePlugin extends JavaPlugin
         getServer().getPluginManager().registerEvents(new EntityDamageByEntityEventListener(), this);
         getServer().getPluginManager().registerEvents(new EntityDamageEventListener(), this);
 
+        if( ! config.getBoolean("wolf.damage.blockexplosion") )
+            EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.BLOCK_EXPLOSION);
+
+        if( ! config.getBoolean("wolf.damage.contact") )
+            EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.CONTACT);
 
         if( ! config.getBoolean("wolf.damage.drowing") )
             EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.DROWNING);
 
+        if( ! config.getBoolean("wolf.damage.dragon_breath") )
+            EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.DRAGON_BREATH);
+
         if( ! config.getBoolean("wolf.damage.entity") )
             EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.ENTITY_ATTACK);
+
+        if( ! config.getBoolean("wolf.damage.entity_explosion") )
+            EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.ENTITY_EXPLOSION);
+
+        if( ! config.getBoolean("wolf.damage.entity_sweep_attack") )
+            EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.ENTITY_SWEEP_ATTACK);
 
         if( ! config.getBoolean("wolf.damage.fire") )
         {
@@ -50,6 +64,12 @@ public class DoggiePlugin extends JavaPlugin
 
         if( ! config.getBoolean("wolf.damage.falling_block"))
             EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.FALLING_BLOCK);
+
+        if( ! config.getBoolean("wolf.damage.hot_floor"))
+            EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.HOT_FLOOR);
+
+        if( ! config.getBoolean("wolf.damage.lava"))
+            EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.LAVA);
 
         if( ! config.getBoolean("wolf.damage.projectile") )
             EntityDamageEventListener.causelist.add(EntityDamageEvent.DamageCause.PROJECTILE);
