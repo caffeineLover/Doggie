@@ -3,12 +3,12 @@ package com.peter.doggie.listeners;
 import com.peter.doggie.DoggiePlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.entity.AnimalTamer;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Wolf;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 
 public class EntityDamageByEntityListener implements Listener {
@@ -21,7 +21,7 @@ public class EntityDamageByEntityListener implements Listener {
     }
 
     @EventHandler
-    public void on(org.bukkit.event.entity.EntityDamageByEntityEvent event) {
+    public void on(EntityDamageByEntityEvent event) {
         Entity damagee = event.getEntity();
         Entity damager = event.getDamager();
 
