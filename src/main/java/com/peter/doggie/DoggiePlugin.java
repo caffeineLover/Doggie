@@ -23,10 +23,8 @@ public class DoggiePlugin extends JavaPlugin
         File configFile = new File(getDataFolder(), this.configFileName);
         if( ! configFile.exists() )
         {
-            System.out.println("Config file does not exist.");
-            getConfig().options().copyDefaults(true);
-            saveConfig();
-            saveDefaultConfig();
+            System.out.println("Config file does not exist.  Copying the config from the jar file.");
+            this.saveDefaultConfig();
         }
 
         YamlConfiguration config = YamlConfiguration.loadConfiguration(configFile);

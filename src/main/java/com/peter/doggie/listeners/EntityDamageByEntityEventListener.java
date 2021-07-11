@@ -12,7 +12,6 @@ import org.bukkit.event.Listener;
 public class EntityDamageByEntityEventListener implements Listener
 {
 
-
     @EventHandler
     public void onDamage(org.bukkit.event.entity.EntityDamageByEntityEvent event)
     {
@@ -35,12 +34,12 @@ public class EntityDamageByEntityEventListener implements Listener
         if( damager instanceof Player p ) {
             if (tamer == p) {
                 event.setCancelled(true);
-                p.sendMessage(ChatColor.RED + "Papa Plugin: You want to hurt " + name + "?  I won't allow it!");
-                System.out.println("Papa Plugin: You want to hurt " + name + "?  I won't allow it!");
+                p.sendMessage(ChatColor.RED + "Doggie Plugin: You want to hurt " + name + "?  I won't allow it!");
+                System.out.println("Doggie Plugin: You want to hurt " + name + "?  I won't allow it!");
             } else {
                 event.setCancelled(true);
-                p.sendMessage(ChatColor.RED + "Papa Plugin: You want to hurt " + name + "?  I won't allow it!");
-                System.out.println("Papa Plugin: You want to hurt " + name + "?  I won't allow it!");
+                p.sendMessage(ChatColor.RED + "Doggie Plugin: You want to hurt " + name + "?  I won't allow it!");
+                System.out.println("Doggie Plugin: You want to hurt " + name + "?  I won't allow it!");
             }
         }
     }
