@@ -1,0 +1,59 @@
+There are two main subsystems:
+    * Damage Control
+    * Pet Management
+
+Although only Wolves are supported as Pets, eventually, all tameables (horses, cats, etc.) will be supported.  In this
+document, a supported Pet type will be indicated by <pet type>.
+
+
+
+Pet Damage Control
+    Pet damage control is done through the config file.  Two listeners are employed:
+
+        * EntityDamageListener: Controls damage in two situations:  One, for when there is no "damager", e.g. your Pet
+                stands on a magma block or falls from a great height.  Two, when the damager is a mob (i.e. a non-Player
+                character).  This listener is controled via damage.<pet type>.* in config.yml:
+
+                    damage:
+                       wolf:
+                          - BLOCK_EXPLOSION
+                          - CONTACT
+                          - DRAGON_BREATH
+                          - DROWNING
+                          - ENTITY_ATTACK
+                          - ENTITY_EXPLOSION
+                          - ENTITY_SWEEP_ATTACK
+                          - FIRE
+                          - FALL
+                          - FALLING_BLOCK
+                          - LAVA
+                          - HOT_FLOOR
+                          - PROJECTILE
+
+                So, damage.wolf.PROJECTILE can protect your Pet from a skeleton's arrows or a pillager's crossbow, but
+                not your own bow / crossbow, nor the bow / crossbow of other players.  Some DamageTypes are not listed
+                above.  I could implement them pretty easily if anyone really wanted them (maybe SUFFOCATION?).
+
+                TAKE NOTE: THE CONFIG SHOWS ALLOWABLE DAMAGE!  The # character is the comment character.  Compare:
+
+                damage:                                 damage:
+                   wolf:                                   wolf:
+                      - BLOCK_EXPLOSION                       # - BLOCK_EXPLOSION
+                      - CONTACT                               # - CONTACT
+                      - DRAGON_BREATH                           - DRAGON_BREATH
+
+               On the left-hand side, your Pet will experience BLOCK_EXPLOSION, CONTACT, and DRAGON_BREATH damage.  On
+               the right-hand side, it will only experience DRAGON_BREATH damage.
+
+        * EntityDamageByEntityListener: Controls damage to your Pet when the damager is a Player, either you (the Pet's
+                owner) or someone you're playing with.  It's controled by damage_player.<pet>.* in config.yml:
+
+                damage_player:
+                   wolf:
+                     - OWNER_ATTACK
+                     # - OTHER_ATTACK
+                     - OWNER_PROJECTILE
+                     - OTHER_PROJECTILE
+
+                In the above configuration, the Pet will be vulnerable to all projectile attacks (e.g. your bow or your
+                co-op player's bow) and your attack (e.g. with a sword or pickaxe) but not your co-op player's attack.

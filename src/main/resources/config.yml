@@ -1,10 +1,25 @@
+# Important notes to the user:
+# 1. For damage.*, the Entity damage types (ENTITY_ATTACK, ENTITY_SWEEP_ATTACK, and ENTITY_SWEEP_ATTACK) are for mobs,
+#       not Players.  See damage_player for damage control with respect to Players.  For example, damage.PROJECTILE
+#       protects Pet from skeleton arrows, but not your own arrows.
+damage_player:
+   wolf:
+     - OWNER_ATTACK
+     - OTHER_ATTACK
+     - OWNER_PROJECTILE
+     - OTHER_PROJECTILE
+   horse:
+     - OWNER_ATTACK
+     - OTHER_ATTACK
+     - OWNER_PROJECTILE
+     - OTHER_PROJECTILE
 damage:
    wolf:
       - BLOCK_EXPLOSION
       - CONTACT
       - DRAGON_BREATH
       - DROWNING
-      - ENTITY
+      - ENTITY_ATTACK
       - ENTITY_EXPLOSION
       - ENTITY_SWEEP_ATTACK
       - FIRE
@@ -13,6 +28,20 @@ damage:
       - LAVA
       - HOT_FLOOR
       - PROJECTILE
+   horse:
+     - BLOCK_EXPLOSION
+     - CONTACT
+     - DRAGON_BREATH
+     - DROWNING
+     - ENTITY_ATTACK
+     - ENTITY_EXPLOSION
+     - ENTITY_SWEEP_ATTACK
+     - FIRE
+     - FALL
+     - FALLING_BLOCK
+     - LAVA
+     - HOT_FLOOR
+     - PROJECTILE
 
 color:
   BLACK: "&0"

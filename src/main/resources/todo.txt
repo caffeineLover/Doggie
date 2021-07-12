@@ -1,0 +1,7 @@
+Todo:
+
+Low:
+    * I'd like to make the config file's damage section case-insensitive.
+
+High:
+    * EntityDamageByEntityListener needs to be finished.
