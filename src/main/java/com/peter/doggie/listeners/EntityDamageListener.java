@@ -16,8 +16,8 @@ import java.util.stream.Collectors;
 
 public class EntityDamageListener implements Listener
 {
-    private DoggiePlugin plugin;
-    private List<EntityDamageEvent.DamageCause> causeList;
+    final DoggiePlugin plugin;
+    private List<EntityDamageEvent.DamageCause> noDamageList;
 
 
 
@@ -26,23 +26,22 @@ public class EntityDamageListener implements Listener
         this.plugin = plugin;
         Bukkit.getPluginManager().registerEvents(this, plugin);
 
-        causeList = new ArrayList<>();
-        causeList = plugin.getConfig().getStringList("damage.wolf").stream().map(EntityDamageEvent.DamageCause::valueOf).collect(Collectors.toList());
+        noDamageList = new ArrayList<>();
+        noDamageList = plugin.getConfig().getStringList("nodamage.nonentity").stream().map(EntityDamageEvent.DamageCause::valueOf).collect(Collectors.toList());
     }
-
 
 
     @EventHandler
     public void on(EntityDamageEvent event)
     {
-        EntityDamageEvent.DamageCause cause = event.getCause();
-        Entity damagee = event.getEntity();
-
         // If it's not a wolf that's being damaged, we don't care.
+        // FIXME: When the Pet class gets fully implemented, we need to check for Pet instead of Wolf.
+        Entity damagee = event.getEntity();
         if( !(damagee instanceof Wolf wolf) )
             return;
 
         // If the wolf isn't tamed, we don't care about it.
+        // FIXME: When the Pet class gets fully implemented, this needs to change since a Pet is tamed by definition.
         if( ! wolf.isTamed() )
             return;
 
@@ -50,12 +49,16 @@ public class EntityDamageListener implements Listener
         String name = ChatColor.stripColor(damagee.getCustomName());
         plugin.getWolfNameHandler().setWolfNameToCollarColor(wolf);
 
-        if( ! causeList.contains(cause) )
-        {
+        // Disallow damage types that are in noDamageList.
+        EntityDamageEvent.DamageCause cause = event.getCause();
+        if( noDamageList.contains(cause) ) {
             event.setCancelled(true);
-            Bukkit.getLogger().info("Pet: " + name + " has been saved from damage cause: " + cause);
-        } else
-            Bukkit.getLogger().info("Pet: " + name + " has NOT been saved from damage cause: " + cause);
+            Bukkit.getLogger().info("EntityDamage: " + name + " no damage from: " + cause);
+        } else {
+            Bukkit.getLogger().info("EntityDamage: " + name + " damage from: " + cause);
+        }
     }
+
+
 
 }

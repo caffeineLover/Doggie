@@ -5,3 +5,12 @@ Low:
 
 High:
     * EntityDamageByEntityListener needs to be finished.
+    * When the Pet gets implemented, we need to change all code that looks like this:
+
+            if( ! (damagee instanceof Wolf wolf) )
+                return;
+
+    to this:
+
+            if( ! (damagee instanceof Pet pet) )
+                return;
