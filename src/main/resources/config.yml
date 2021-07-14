@@ -1,0 +1,42 @@
+nodamage:
+   owner:
+      - ENTITY_ATTACK
+      - ENTITY_EXPLOSION
+      - ENTITY_SWEEP_ATTACK
+      - PROJECTILE
+   player:
+     - ENTITY_ATTACK
+     - ENTITY_EXPLOSION
+     - ENTITY_SWEEP_ATTACK
+     - PROJECTILE
+   mob:
+     - ENTITY_ATTACK
+     - ENTITY_EXPLOSION
+     - ENTITY_SWEEP_ATTACK
+     - PROJECTILE
+   nonentity:
+      - BLOCK_EXPLOSION
+      - CONTACT
+      - DROWNING
+      - FIRE
+      - FALL
+      - FALLING_BLOCK
+      - LAVA
+      - HOT_FLOOR
+color:
+  BLACK: "&0"
+  BLUE: "&1"
+  BROWN: "&6"
+  CYAN: "&3"
+  GRAY: "&8"
+  GREEN: "&a"
+  LIGHT_BLUE: "&b"
+  LIGHT_GRAY: "&7"
+  LIME: "&a"
+  MAGENTA: "&5"
+  ORANGE: "&6"
+  PINK: "&d"
+  PURPLE: "&5"
+  RED: "&4"
+  WHITE: "&f"
+  YELLOW: "&e"
