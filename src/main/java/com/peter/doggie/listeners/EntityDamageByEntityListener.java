@@ -59,11 +59,12 @@ public class EntityDamageByEntityListener implements Listener
         if( ! (damager instanceof Player player) )
             return;
 
-        UUID ownerUUID, playerUUID;
-        try                             { ownerUUID = wolf.getOwner().getUniqueId(); }
-        catch( NullPointerException e ) { e.printStackTrace(); return;               }
-        try                             { playerUUID = player.getUniqueId();         }
-        catch( NullPointerException e ) { e.printStackTrace(); return;               }
+        UUID playerUUID = player.getUniqueId();
+        UUID ownerUUID;
+        if( wolf.getOwner() != null )
+            ownerUUID = wolf.getOwner().getUniqueId();
+        else
+            return;
 
         List<EntityDamageEvent.DamageCause> theListToUse;
         String deleteMeDebug;
