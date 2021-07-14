@@ -1,0 +1,16 @@
+Todo:
+
+Low:
+    * I'd like to make the config file's damage section case-insensitive.
+
+High:
+    * EntityDamageByEntityListener needs to be finished.
+    * When the Pet gets implemented, we need to change all code that looks like this:
+
+            if( ! (damagee instanceof Wolf wolf) )
+                return;
+
+    to this:
+
+            if( ! (damagee instanceof Pet pet) )
+                return;
