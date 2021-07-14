@@ -1,19 +1,28 @@
-damage:
-   wolf:
-      - BLOCK_EXPLOSION
-      - CONTACT
-      - DRAGON_BREATH
-      - DROWNING
-      - ENTITY
+nodamage:
+   owner:
+      - ENTITY_ATTACK
       - ENTITY_EXPLOSION
       - ENTITY_SWEEP_ATTACK
+      - PROJECTILE
+   player:
+     - ENTITY_ATTACK
+     - ENTITY_EXPLOSION
+     - ENTITY_SWEEP_ATTACK
+     - PROJECTILE
+   mob:
+     - ENTITY_ATTACK
+     - ENTITY_EXPLOSION
+     - ENTITY_SWEEP_ATTACK
+     - PROJECTILE
+   nonentity:
+      - BLOCK_EXPLOSION
+      - CONTACT
+      - DROWNING
       - FIRE
       - FALL
       - FALLING_BLOCK
       - LAVA
       - HOT_FLOOR
-      - PROJECTILE
-
 color:
   BLACK: "&0"
   BLUE: "&1"

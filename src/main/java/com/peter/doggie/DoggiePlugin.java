@@ -1,7 +1,9 @@
 package com.peter.doggie;
 
 import com.peter.doggie.handlers.WolfNameHandler;
+import com.peter.doggie.listeners.EntityDamageByEntityListener;
 import com.peter.doggie.listeners.EntityDamageListener;
+import com.peter.doggie.listeners.EntityTameListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -24,8 +26,12 @@ public class DoggiePlugin extends JavaPlugin
             this.saveDefaultConfig();
         }
 
+        // Damage subsystem
+        new EntityDamageByEntityListener(this);
         new EntityDamageListener(this);
-        new EntityDamageListener(this);
+
+        // Rich pet system
+        new EntityTameListener(this);
 
         wolfNameHandler = new WolfNameHandler(this);
     }
