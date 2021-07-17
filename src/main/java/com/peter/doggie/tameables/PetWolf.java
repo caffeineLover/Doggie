@@ -9,9 +9,8 @@ public class PetWolf extends Pet
     private DyeColor collarColor;
 
 
-    public PetWolf(DyeColor collarColor)
+    public PetWolf()
     {
-        this.collarColor = collarColor;
     }
 
 

@@ -1,6 +1,5 @@
 package com.peter.doggie.tameables;
 
-import com.peter.doggie.exception.MissingDataException;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 
@@ -22,16 +21,16 @@ public class Pet
 
 
 
-    public String getName() throws MissingDataException {
-        if( petName.isBlank() || petName.isEmpty() || petName == null ) {
-            throw new MissingDataException("Pet.name isn't set, but I was expecting it to be.");
+    public String getName() throws IllegalStateException {
+        if( petName.isBlank() || petName.isEmpty() ) {
+            throw new IllegalStateException("Pet.name isn't set, but I was expecting it to be.");
         }
         return petName;
     }
 
-    public String getBirthday() throws MissingDataException {
+    public String getBirthday() throws IllegalStateException {
         if( birthday == null ) {
-            throw new MissingDataException("Pet.birthday isn't set, but I was expecting it to be.");
+            throw new IllegalStateException("Pet.birthday isn't set, but I was expecting it to be.");
         }
         return petName;
     }

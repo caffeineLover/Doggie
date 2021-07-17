@@ -34,7 +34,8 @@ public class EntityTameListener implements Listener
             return;
         }
 
-        Pet pet = PetHandler.createPet( event.getEntity() );
+        PetHandler petHandler = new PetHandler();
+        Pet pet = petHandler.createPet( event.getEntity() );
     }
 
 
