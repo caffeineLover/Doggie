@@ -1,10 +1,21 @@
 package com.peter.doggie.tameables;
 
-
-import com.peter.doggie.tameables.AbstractPet;
 import org.bukkit.DyeColor;
 
-public class PetWolf extends AbstractPet
+
+
+public class PetWolf extends Pet
 {
-    private DyeColor collarColor;    // This is only applicable to wolves?
+    private DyeColor collarColor;
+
+
+    public PetWolf(DyeColor collarColor)
+    {
+        this.collarColor = collarColor;
+    }
+
+
+
+    public DyeColor getCollarColor()                    { return collarColor;     }
+    public void     setCollarColor( DyeColor dyeColor ) { collarColor = dyeColor; }
 }

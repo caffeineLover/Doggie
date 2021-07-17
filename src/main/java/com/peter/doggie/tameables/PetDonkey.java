@@ -2,6 +2,6 @@ package com.peter.doggie.tameables;
 
 
 
-public class PetHorse extends Pet
+public class PetDonkey extends Pet
 {
 }
